@@ -5,7 +5,7 @@ import ua.edu.khpi.logic.Randomizer.getRandomInt
 import ua.edu.khpi.model.EntryPoint
 import ua.edu.khpi.model.EntryProperties
 
-object Generator {
+object Generation {
     @JvmStatic
     fun crossTwoEntries(
         newGenerationList: MutableList<EntryPoint>,

@@ -6,14 +6,14 @@ import java.util.concurrent.ThreadLocalRandom
 
 object Randomizer {
     @JvmStatic
-    fun rouletteMethod(entities: List<EntryPoint>, sumF: Double, increaseF: Double): List<Int> {
+    fun rouletteMethod(entities: List<EntryPoint>, sumFitnessFunction: Double, increaseFunction: Double): List<Int> {
         val winnerIndexes: MutableList<Int> = LinkedList()
 
         for (i in entities.indices) {
             val rouletteResult = getRandomDouble(0.0, 100.0)
             var currentPointer = 0.0
             for (j in entities.indices) {
-                currentPointer += (entities[j].f + increaseF) / sumF * 100
+                currentPointer += (entities[j].f + increaseFunction) / sumFitnessFunction * 100
                 if (rouletteResult <= currentPointer) {
                     winnerIndexes.add(j)
                     break
